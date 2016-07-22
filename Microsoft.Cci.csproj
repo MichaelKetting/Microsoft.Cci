@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <Import Project="..\dir.settings.targets" Condition="Exists('..\dir.settings.targets')" />
   <PropertyGroup>
@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <AssemblyName>Fork.Microsoft.Cci</AssemblyName>
     <DebugSymbols>true</DebugSymbols>
-    <DefineConstants>TRACE;LITTLEENDIAN;COREFX_SUBSET;MERGED_DLL</DefineConstants>
+    <DefineConstants>TRACE;LITTLEENDIAN;MERGED_DLL</DefineConstants>
     <SignAssembly>true</SignAssembly>
     <NoWarn>$(NoWarn);649</NoWarn>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
