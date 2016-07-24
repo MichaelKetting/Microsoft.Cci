@@ -254,6 +254,31 @@ namespace Microsoft.Cci {
     }
 
     /// <summary>
+    /// Returns zero or more locations for the source for a given method represented by a metadata token.
+    /// </summary>
+    /// <param name="token">metadata token representing a method</param>
+    /// <returns>
+    /// an IDictionary&lt;uint, IPrimarySourceLocation&gt; linking an il offset to a source file location
+    /// </returns>
+    public IDictionary<uint, IPrimarySourceLocation> GetPrimarySourceLocationsForMethodToken(uint token)
+    {
+      var dictionary = new Dictionary<uint, IPrimarySourceLocation>();
+      PdbFunction pdbFunction;
+      if (!pdbFunctionMap.TryGetValue(token, out pdbFunction) || pdbFunction.lines == null)
+        return dictionary;
+      foreach (var pdbLines in pdbFunction.lines)
+      {
+        var sourceDocumentFor = GetPrimarySourceDocumentFor(pdbLines.file);
+        foreach (var pdbLine in pdbLines.lines)
+        {
+          if (!dictionary.ContainsKey(pdbLine.offset))
+            dictionary.Add(pdbLine.offset, new PdbSourceLineLocation(sourceDocumentFor, (int) pdbLine.lineBegin, pdbLine.colBegin, (int) pdbLine.lineEnd, pdbLine.colEnd));
+        }
+      }
+      return dictionary;
+    }
+
+    /// <summary>
     /// 
     /// </summary>
     /// <param name="localDefinition"></param>
