@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Fork.Microsoft.Cci</id>
-    <version>4.0.0.0</version>
+    <version>4.0.0.1</version>
     <title>Fork.Microsoft.Cci</title>
     <authors>Microsoft</authors>
     <owners>rubicon IT GmbH</owners>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/Microsoft/cci</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Provides a fork of the Microsoft.Cci library, compatible with .NET 4.5.
-GitHub SHA: https://github.com/MichaelKetting/Microsoft.Cci/tree/126992bbf155dc8c6ba30cb0e9a12acc507c2579</description>
+GitHub SHA: https://github.com/MichaelKetting/Microsoft.Cci/tree/a1354b339399724bf64e276481b057dc002cad41</description>
     <copyright>(c) Microsoft Corporation.  All rights reserved.</copyright>
   </metadata>
   <files>
